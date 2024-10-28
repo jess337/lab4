@@ -1,0 +1,8 @@
+{
+    "name": "Семён",
+    "age": 21, 
+    "weight": 70.0, 
+    "height": 180.0, 
+    "blood_pressure": "80", 
+    "cholesterol": 20.0
+}
