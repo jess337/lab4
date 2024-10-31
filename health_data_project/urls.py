@@ -18,7 +18,13 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
 
+# Список URL-ов и соответствующих представлений
 urlpatterns = [
+    # URL для админки Django
     path('admin/', admin.site.urls),
+
+    # URL для основного приложения health_data_app
     path('', include('health_data_app.urls')),
+
+    # Добавляет URL-ы для статических файлов
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

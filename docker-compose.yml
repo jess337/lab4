@@ -1,29 +1,42 @@
 version: '3.8'
 
+# Определение сервисов, которые будут запущены с помощью Docker Compose
 services:
+  # Сервис для веб-приложения
   web:
+    # Построение Docker-образа на основе текущего контекста
     build: .
+    # Команда, которая будет запущена при старте контейнера
     command: python manage.py runserver 0.0.0.0:8000
+    # Монтирование локальной директории в контейнер
     volumes:
       - .:/app
+    # Открытие порта для доступа к веб-приложению
     ports:
       - "8000:8000"
+    # Зависимость от сервиса db, который должен быть запущен перед веб-приложением
     depends_on:
       - db
+    # Переменные окружения для контейнера
     environment:
       - DEBUG=1
       - SECRET_KEY=your_secret_key
       - ALLOWED_HOSTS=localhost
       - DATABASE_URL=postgres://postgres:postgres@db:5432/health_data_db
 
+  # Сервис для базы данных PostgreSQL
   db:
+    # Использование официального образа PostgreSQL версии 13
     image: postgres:13
+    # Монтирование локальной директории для хранения данных базы данных
     volumes:
       - postgres_data:/var/lib/postgresql/data/
+    # Переменные окружения для контейнера
     environment:
       - POSTGRES_DB=health_data_db
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
 
+# Определение томов (volumes) для хранения данных
 volumes:
   postgres_data:

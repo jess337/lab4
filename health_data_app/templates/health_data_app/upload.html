@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- Устанавливает заголовок документа -->
     <title>Upload JSON File</title>
 </head>
 <body>
+    <!-- Заголовок страницы -->
     <h1>Upload JSON File</h1>
+
+    <!-- Форма для загрузки JSON-файла -->
     <form action="{% url 'upload' %}" method="post" enctype="multipart/form-data">
+        <!-- Токен CSRF для защиты от атак CSRF -->
         {% csrf_token %}
+
+        <!-- Поле для выбора файла -->
         <input type="file" name="file">
+
+        <!-- Кнопка для отправки формы -->
         <button type="submit">Upload</button>
     </form>
 </body>

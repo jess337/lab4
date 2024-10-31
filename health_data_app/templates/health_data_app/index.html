@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- Устанавливает заголовок документа и подключает CSS-стиль -->
     <title>Health Data</title>
+    <!-- Подключает внешний CSS-файл для стилизации страницы -->
     <link rel="stylesheet" type="text/css" href=" static 'css/styles.css' ">
 </head>
 <body>
+    <!-- Заголовок страницы -->
     <header>
         <h1>Health Data</h1>
     </header>
+
+    <!-- Навигационное меню для перехода по страницам -->
     <nav>
         <a href="{% url 'index' %}">Home</a>
         <a href="{% url 'upload' %}">Upload JSON File</a>
     </nav>
+
+    <!-- Форма для ввода данных -->
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Save</button>
     </form>
+
+    <!-- Раздел для отображения существующих JSON-файлов -->
     <div class="file-list">
         <h2>Existing JSON Files</h2>
         <ul>
+            <!-- Перебирает и отображает список JSON-файлов -->
             {% for file in files %}
                 <li>{{ file }}</li>
             {% empty %}
@@ -29,4 +39,3 @@
     </div>
 </body>
 </html>
-
