@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Health Data</title>
+    <!-- Устанавливает заголовок документа и подключает CSS-стиль -->
+    <title>Upload JSON File</title>
+    <!-- Подключает внешний CSS-файл для стилизации страницы -->
     <link rel="stylesheet" type="text/css" href=" static 'css/styles.css' ">
 </head>
 <body>
+    <!-- Заголовок страницы -->
     <header>
-        <h1>Health Data</h1>
+        <h1>Upload JSON File</h1>
     </header>
+
+    <!-- Навигационное меню для перехода на главную страницу -->
     <nav>
         <a href="{% url 'index' %}">Home</a>
-        <a href="{% url 'upload' %}">Upload JSON File</a>
     </nav>
-    <form method="post">
+
+    <!-- Форма для загрузки JSON-файла -->
+    <form action="{% url 'upload' %}" method="post" enctype="multipart/form-data">
+        <!-- Токен CSRF для защиты от атак CSRF -->
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Save</button>
+        <!-- Метка для поля выбора файла -->
+        <label for="file">Choose a file:</label>
+        <!-- Поле для выбора файла -->
+        <input type="file" name="file" id="file">
+        <!-- Кнопка для отправки формы -->
+        <button type="submit">Upload</button>
     </form>
-    <div class="file-list">
-        <h2>Existing JSON Files</h2>
-        <ul>
-            {% for file in files %}
-                <li>{{ file }}</li>
-            {% empty %}
-                <li>No files found</li>
-            {% endfor %}
-        </ul>
-    </div>
 </body>
 </html>
+
+
