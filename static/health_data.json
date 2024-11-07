@@ -1,0 +1,50 @@
+[
+    {
+        "name": "\u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u0430",
+        "age": 18,
+        "weight": 55.0,
+        "height": 160.0,
+        "blood_pressure": "80",
+        "cholesterol": 20.0
+    },
+    {
+        "name": "\u041c\u0430\u0440\u0438\u044f",
+        "age": 19,
+        "weight": 50.0,
+        "height": 173.0,
+        "blood_pressure": "80",
+        "cholesterol": 20.0
+    },
+    {
+        "name": "\u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u0430",
+        "age": 19,
+        "weight": 55.0,
+        "height": 165.0,
+        "blood_pressure": "80",
+        "cholesterol": 20.0
+    },
+    {
+        "name": "Alex",
+        "age": 23,
+        "weight": 45.0,
+        "height": 155.0,
+        "blood_pressure": "80",
+        "cholesterol": 20.0
+    },
+    {
+        "name": "Alex",
+        "age": 25,
+        "weight": 60.0,
+        "height": 167.0,
+        "blood_pressure": "80",
+        "cholesterol": 20.0
+    },
+    {
+        "name": "Alex",
+        "age": 28,
+        "weight": 65.0,
+        "height": 180.0,
+        "blood_pressure": "30",
+        "cholesterol": 20.0
+    }
+]
